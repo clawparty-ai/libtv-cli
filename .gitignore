@@ -1,0 +1,7 @@
+/target
+test_output.png
+*.png
+*.jpg
+*.jpeg
+*.gif
+
