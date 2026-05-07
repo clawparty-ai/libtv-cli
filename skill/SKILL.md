@@ -23,9 +23,23 @@ Generate images through the LiblibAI (哩布哩布AI) cloud platform using the `
 2. Extract and place `libtv-cli` binary in a directory on your PATH, or set `LIBTV_CLI_PATH`.
 
 3. Set your API credentials:
+
+   **macOS / Linux:**
    ```bash
    export LIBLIB_ACCESS_KEY="your-access-key"
    export LIBLIB_SECRET_KEY="your-secret-key"
+   ```
+
+   **Windows (cmd):**
+   ```cmd
+   set LIBLIB_ACCESS_KEY=your-access-key
+   set LIBLIB_SECRET_KEY=your-secret-key
+   ```
+
+   **Windows (PowerShell):**
+   ```powershell
+   $env:LIBLIB_ACCESS_KEY="your-access-key"
+   $env:LIBLIB_SECRET_KEY="your-secret-key"
    ```
 
 ## Usage
@@ -44,6 +58,28 @@ The agent will automatically:
 3. Call libtv-cli with your prompt
 4. Save the generated image to the workspace directory
 5. Report the file path
+
+### Skill Wrapper Scripts
+
+This skill includes platform-specific wrapper scripts that provide a simplified interface:
+
+#### macOS / Linux (`generate_image.sh`)
+
+```bash
+./generate_image.sh \
+  --prompt "a cute cat floating in space, digital art" \
+  --output output.png
+```
+
+#### Windows (`generate_image.bat`)
+
+```batch
+generate_image.bat ^
+  --prompt "a cute cat floating in space, digital art" ^
+  --output output.png
+```
+
+Both scripts support the same options as the direct CLI (see Parameters below).
 
 ### Direct CLI Usage
 
